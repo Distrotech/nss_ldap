@@ -1,0 +1,18 @@
+--- autofs-4.1.3/modules/Makefile	2004-04-03 09:14:33.000000000 +0200
++++ autofs-4.1.3/modules/Makefile	2005-07-21 11:39:35.000000000 +0200
+@@ -7,13 +7,13 @@
+ include ../Makefile.rules
+ 
+ SRCS :=	lookup_yp.c  lookup_file.c  lookup_program.c  lookup_userhome.c \
+-	lookup_multi.c \
++	lookup_multi.c lookup_nssldap.c \
+ 	parse_sun.c    \
+ 	mount_generic.c  mount_nfs.c  mount_afs.c  mount_autofs.c \
+ 	mount_changer.c  mount_bind.c
+ 
+ MODS :=	lookup_yp.so lookup_file.so lookup_program.so lookup_userhome.so \
+-	lookup_multi.so \
++	lookup_multi.so lookup_nssldap.so \
+ 	parse_sun.so \
+ 	mount_generic.so mount_nfs.so mount_afs.so mount_autofs.so \
+	mount_changer.so mount_bind.so
