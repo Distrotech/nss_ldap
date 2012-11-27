@@ -670,7 +670,7 @@ extern int __multi_threaded;
 #define NSS_LDAP_LOCK(m)		mutex_lock(&m)
 #define NSS_LDAP_UNLOCK(m)		mutex_unlock(&m)
 #define NSS_LDAP_DEFINE_LOCK(m)		static mutex_t m = DEFAULTMUTEX
-#elif defined(HAVE_LIBC_LOCK_H) || defined(HAVE_BITS_LIBC_LOCK_H)
+#elif defined(HAVE___LIBC_LOCK_LOCK) && defined(HAVE___LIBC_LOCK_UNLOCK)
 #define NSS_LDAP_LOCK(m)		__libc_lock_lock(m)
 #define NSS_LDAP_UNLOCK(m)		__libc_lock_unlock(m)
 #define NSS_LDAP_DEFINE_LOCK(m)		static pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER
