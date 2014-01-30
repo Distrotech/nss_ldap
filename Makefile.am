@@ -14,7 +14,7 @@ endif
 
 EXTRA_DIST = CVSVersionInfo.txt ChangeLog \
 	     AUTHORS ANNOUNCE NEWS INSTALL README LICENSE.OpenLDAP COPYING\
-	     ldap.conf nss_ldap.spec nsswitch.ldap 
+	     ldap-nss.conf nss_ldap.spec nsswitch.ldap 
 
 man_MANS = nss_ldap.5
 
@@ -101,7 +101,7 @@ install-data-local:
 	@$(NORMAL_INSTALL)
 	@if test ! -f $(DESTDIR)$(NSS_LDAP_PATH_CONF); then \
 		$(mkinstalldirs) $(DESTDIR)$(dir $(NSS_LDAP_PATH_CONF)); \
-		$(INSTALL_DATA) -o $(INST_UID) -g $(INST_GID) $(srcdir)/ldap.conf $(DESTDIR)$(NSS_LDAP_PATH_CONF); \
+		$(INSTALL_DATA) -o $(INST_UID) -g $(INST_GID) $(srcdir)/ldap-nss.conf $(DESTDIR)$(NSS_LDAP_PATH_CONF); \
 	fi
 	$(INSTALL_DATA) -o $(INST_UID) -g $(INST_GID) $(srcdir)/nsswitch.ldap $(DESTDIR)$(sysconfdir)/nsswitch.ldap; 
 
